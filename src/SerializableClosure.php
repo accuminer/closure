@@ -178,6 +178,16 @@ class SerializableClosure implements Serializable
         return $data;
     }
 
+    public function __serialize()
+    {
+        return $this->serialize();
+    }
+
+    public function __unserialize($data)
+    {
+        return $this->unserialize($data);
+    }
+
     /**
      * Implementation of Serializable::unserialize()
      *
